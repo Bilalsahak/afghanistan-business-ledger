@@ -13,7 +13,7 @@ function Auth(){
   const [form,setForm]=useState({name:'',email:'',password:''})
   async function submit(e:React.FormEvent){ e.preventDefault(); setBusy(true); setMessage('')
     const result=signup ? await supabase.auth.signUp({email:form.email,password:form.password,options:{data:{full_name:form.name},emailRedirectTo:window.location.origin}}) : await supabase.auth.signInWithPassword({email:form.email,password:form.password})
-    setMessage(result.error?.message || (signup?'Account created. Confirm your email, then wait for owner approval.':'')); setBusy(false)
+    setMessage(result.error?.message || (signup?'Account created. No email confirmation is needed. Access begins after owner approval.':'')); setBusy(false)
   }
   return <main className="auth"><section className="auth-card"><div className="brand-mark"><BookOpen/></div><p className="eyebrow">BUSINESS RECORDS</p><h1>Keep every afghani accounted for.</h1><p className="muted">Simple daily entries. Clear monthly and quarterly reports.</p><form onSubmit={submit}>{signup&&<label>Full name<input required value={form.name} onChange={e=>setForm({...form,name:e.target.value})}/></label>}<label>Email<input required type="email" value={form.email} onChange={e=>setForm({...form,email:e.target.value})}/></label><label>Password<input required minLength={8} type="password" value={form.password} onChange={e=>setForm({...form,password:e.target.value})}/></label>{message&&<p className="notice">{message}</p>}<button disabled={busy}>{busy?'Please wait…':signup?'Create account':'Log in'}</button></form><button className="link" onClick={()=>{setSignup(!signup);setMessage('')}}>{signup?'Already registered? Log in':'New user? Request an account'}</button></section></main>
 }
