@@ -9,8 +9,8 @@ export default defineConfig(async () => {
     registerType: 'autoUpdate',
     includeAssets: ['icon.svg'],
     manifest: {
-      name: 'Afghanistan Business Ledger', short_name: 'Business Ledger',
-      description: 'Daily business entries and protected reports',
+      name: 'Afghanistan Business Control', short_name: 'Business Control',
+      description: 'Protected daily operations, cash control, inventory and financial reporting',
       theme_color: '#155e4b', background_color: '#f5f3ec', display: 'standalone',
       start_url: '/', scope: '/',
       icons: [{ src: '/icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any maskable' }]
