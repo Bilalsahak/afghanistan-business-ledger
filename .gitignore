@@ -1,0 +1,7 @@
+node_modules/
+node_modules.interrupted/
+dist/
+.env
+.DS_Store
+.wrangler/
+*.tsbuildinfo
