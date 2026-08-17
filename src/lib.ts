@@ -13,6 +13,8 @@ export type QuarterlyReview = { id:string; year:number; quarter:number; retained
 export type Partner = { id:string; display_order:number; name:string; name_local:string; capital_afn:number; ownership_percent:number|null; contribution_basis:string; is_confirmed:boolean; notes:string }
 export type StartupSummary = { transaction_count:number; total_afn:number; total_usd:number; notes:string }
 export type AuditEvent = { id:number; table_name:string; record_id:string; action:string; actor_id:string|null; occurred_at:string }
+export type PartnerTransaction = { id:string; partner_id:string; transaction_date:string; transaction_type:'capital_contribution'|'partner_withdrawal'|'partner_loan_in'|'loan_repayment'|'profit_distribution'; amount_afn:number; notes:string; status:'pending'|'approved'|'rejected'; submitted_by:string; approved_by:string|null; created_at:string; partners?:{name:string;name_local:string}|null; profiles?:{full_name:string}|null }
+export type ActivityMessage = { id:string; message:string; created_by:string; created_at:string; profiles?:{full_name:string}|null }
 
 export const money = (n:number) => new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(n || 0) + ' AFN'
 export const compactMoney = (n:number) => new Intl.NumberFormat('en-US',{notation:'compact',maximumFractionDigits:1}).format(n || 0) + ' AFN'
