@@ -1,0 +1,49 @@
+/* Mobile-first usability, accessible sizing, and reliable RTL navigation. */
+body{font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%}
+button,input,select,textarea{font-size:16px}
+label{font-size:15px;line-height:1.45}
+label small,.section-label small{font-size:13px;line-height:1.45}
+.entry-card input,.entry-card textarea,.entry-card select{min-height:52px}
+.entry-card textarea{padding-top:13px}
+.entry-card .section-label{margin-top:4px;background:#f7faf8;border:1px solid #e5ede9;padding:14px;border-radius:14px}
+.entry-card .section-label>span{flex:0 0 38px;width:38px;height:38px}
+.entry-card .section-label b{font-size:16px}
+.entry-card .money-input i{top:16px}
+.entry-card .submit{min-height:54px;font-size:16px}
+.notice{font-size:15px;line-height:1.5}
+.entry-progress{position:sticky;top:8px;z-index:10;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:8px;background:#eef4f1e8;border:1px solid #dce8e2;border-radius:15px;backdrop-filter:blur(10px)}
+.entry-progress button{display:flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:9px;background:#fff;color:#244c42;border:1px solid #dce8e2;box-shadow:none}
+.entry-progress button:focus-visible{outline:3px solid #bfe0d2}
+.entry-progress b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#155e4b;color:#fff;font-size:13px}
+.entry-progress span{font-size:14px;white-space:nowrap}
+
+@media(max-width:760px){
+  html[dir=rtl] .shell aside{left:auto;right:-290px;box-shadow:-16px 0 40px #0004}
+  html[dir=rtl] .shell aside.open{left:auto;right:0}
+  .content{padding:16px 14px max(32px,env(safe-area-inset-bottom))}
+  .content>.menu{position:sticky;top:8px;z-index:12;min-height:46px;margin:42px 0 16px;background:#155e4b;color:#fff;box-shadow:0 8px 24px #123f3526}
+  .page-head{gap:12px;margin-bottom:18px}
+  .page-head h1,.hero h1{font-size:34px;line-height:1.08}
+  .page-head p,.hero p{font-size:15px;line-height:1.5}
+  .entry-card{padding:14px;gap:16px;border-radius:18px}
+  .entry-progress{top:62px;margin:0 -4px}
+  .entry-progress button{display:grid;gap:3px;min-height:58px;padding:7px 4px}
+  .entry-progress b{margin:auto}
+  .entry-progress span{font-size:12px}
+  .form-grid{gap:14px}
+  .entry-card label{font-size:15px}
+  .entry-card input,.entry-card textarea{width:100%;font-size:16px;border-radius:12px}
+  .metric{padding:18px}
+  .metric>span,.metric small,.flow span,.report-metrics span,.year-card span{font-size:14px}
+  .metric strong{font-size:24px}
+  .panel,.control-panel{padding:18px}
+  .flow b{font-size:16px}
+  .quick button{min-height:68px;padding:14px}
+  .quick small{font-size:13px}
+  .history{overflow:hidden}
+  .history article{grid-template-columns:1fr 1fr;padding:14px;gap:10px}
+  .history article>time{grid-column:1/-1;font-size:15px}
+  .history article .status,.history article .print-row{grid-column:auto;width:100%;justify-content:center;min-height:44px}
+  .language-switcher{min-height:44px;padding:5px 8px}
+  .language-switcher select{font-size:15px;min-height:34px;min-width:92px}
+}
