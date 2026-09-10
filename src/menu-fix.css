@@ -1,0 +1,7 @@
+.menu-close{display:none}
+@media(max-width:760px){
+  html[dir=rtl] .shell aside{left:auto!important;right:-290px!important;transform:none!important}
+  html[dir=rtl] .shell aside.open{left:auto!important;right:0!important}
+  .menu-close{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;min-height:44px;margin-bottom:14px;background:#ffffff18;color:#fff}
+  .menu-close svg{width:18px}
+}
