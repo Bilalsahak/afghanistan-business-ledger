@@ -7,7 +7,7 @@ import{printOfficialDailyRecord}from'./printDailyRecord';
 type ReceiptCategory='sale'|'inventory_purchase'|'operating_expense'|'other_money_in'|'other_money_out';
 type Receipt={id:string;daily_entry_id:string|null;receipt_date:string;category:ReceiptCategory;vendor:string;receipt_number:string;amount_afn:number;image_path:string;raw_text:string;extraction_confidence:number|null;notes:string;created_at:string;profiles?:{full_name:string}|null};
 const today=()=>new Date().toISOString().slice(0,10);
-const categoryLabel:Record<ReceiptCategory,string>={sale:'Sale / revenue',inventory_purchase:'Inventory purchase',operating_expense:'Operating expense',other_money_in:'Other money in',other_money_out:'Other money out'};
+const categoryLabel:Record<ReceiptCategory,string>={sale:'Sale / revenue',inventory_purchase:'Inventory purchase',operating_expense:'Operating expense',other_money_in:'Qarz received',other_money_out:'Qarz given'};
 const escapeHtml=(value:unknown)=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]!));
 const normalizeDigits=(text:string)=>text.replace(/[۰-۹]/g,d=>String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d))).replace(/[٠-٩]/g,d=>String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)));
 

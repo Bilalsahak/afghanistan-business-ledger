@@ -12,7 +12,7 @@ export default function PerformancePanels({entries,closes}:{entries:Entry[];clos
   const rows=entries.filter(row=>monthKey(row.entry_date)===key).sort((a,b)=>a.entry_date.localeCompare(b.entry_date));
   const sales=sum(rows,'sales_revenue');
   const purchases=sum(rows,'inventory_purchases');
-  const expenses=sum(rows,'operating_expenses')+sum(rows,'other_money_out');
+  const expenses=sum(rows,'operating_expenses');
   const average=rows.length?sales/rows.length:0;
   const best=rows.length?[...rows].sort((a,b)=>n(b.sales_revenue)-n(a.sales_revenue))[0]:null;
   const lowest=rows.length?[...rows].sort((a,b)=>n(a.sales_revenue)-n(b.sales_revenue))[0]:null;
