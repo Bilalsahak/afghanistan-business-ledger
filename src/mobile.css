@@ -47,3 +47,23 @@ label small,.section-label small{font-size:13px;line-height:1.45}
   .language-switcher{min-height:44px;padding:5px 8px}
   .language-switcher select{font-size:15px;min-height:34px;min-width:92px}
 }
+
+/* Sticky mobile top bar + fixed bottom tabs */
+@media(max-width:760px){
+  .mobile-topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:20;margin:0 0 14px;padding:8px 4px;background:#f4f7f5e6;backdrop-filter:blur(10px)}
+  .mobile-brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#155e4b}
+  .mobile-brand img{width:36px;height:36px;border-radius:10px;display:block}
+  .mobile-topbar .menu{display:inline-flex;align-items:center;gap:8px;position:static;margin:0;min-height:44px;padding:8px 14px;background:#155e4b;color:#fff;border:0;border-radius:12px;box-shadow:none}
+  .content{padding:12px 14px calc(88px + env(safe-area-inset-bottom,0px)) !important}
+  .content>.menu{display:none}
+  .bottom-tabs{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:2px;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,#145a48,#0f3f34);border-top:1px solid #1f6b57;box-shadow:0 -10px 28px #0a261f55}
+  .bottom-tabs button{flex:1 1 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:48px;padding:6px 2px;background:transparent;color:#b7d2c8;border:0;border-radius:12px;font-size:11px;font-weight:700;line-height:1.1}
+  .bottom-tabs button svg{width:22px;height:22px;flex:0 0 auto}
+  .bottom-tabs button.active{background:#1c7a63;color:#fff;box-shadow:inset 0 0 0 1px #2d9478}
+  .bottom-tabs button:focus-visible{outline:2px solid #f2c660;outline-offset:2px}
+  html[dir=rtl] .bottom-tabs{direction:rtl}
+  .control-cards{grid-template-columns:1fr}
+  .close-undo-row{flex-direction:column;align-items:stretch}
+  .close-undo-row .danger-btn{justify-content:center;min-height:48px}
+  .entry-card .submit,button.submit,.message-box button{min-height:52px}
+}
