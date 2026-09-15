@@ -67,3 +67,12 @@ label small,.section-label small{font-size:13px;line-height:1.45}
   .close-undo-row .danger-btn{justify-content:center;min-height:48px}
   .entry-card .submit,button.submit,.message-box button{min-height:52px}
 }
+
+
+/* Keep language clear of the top Menu button on phones */
+@media(max-width:760px){
+  .mobile-topbar{min-height:52px;padding-top:8px;padding-bottom:8px}
+  .mobile-topbar .menu{flex:0 0 auto;min-width:76px;justify-content:center}
+  .mobile-brand{min-width:0;padding-right:8px}
+  .language-switcher{pointer-events:auto}
+}
